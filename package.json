@@ -4,9 +4,8 @@
 	"description": "Scrapes upcoming physical and online events in Singapore from https://www.eventbrite.sg, providing structured event data for further use or analysis.",
 	"main": "src/index.ts",
 	"scripts": {
-		"start": "ts-node src/index.ts",
+		"start": "npm run build && node dist/index.js",
 		"build": "tsc",
-		"dev": "ts-node src/index.ts",
 		"prepare": "husky"
 	},
 	"author": "Wei Cong",
@@ -18,11 +17,11 @@
 		"@eslint/js": "^9.29.0",
 		"@types/node": "^24.0.1",
 		"eslint": "^9.29.0",
+		"eslint-config-prettier": "^10.1.5",
 		"globals": "^16.2.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.0",
 		"prettier": "^3.5.3",
-		"ts-node": "^10.9.2",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.34.0"
 	},
