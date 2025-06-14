@@ -1,7 +1,7 @@
 {
 	"name": "singapore-event-scrapper",
 	"version": "1.0.0",
-	"description": "Scrapes upcoming physical and online events in Singapore from https://www.eventbrite.sg, providing structured event data for further use or analysis.",
+	"description": "Scrapes upcoming physical and online events happening in Singapore within the next month from Eventbrite Singapore, and outputs structured event data for further use or analysis.",
 	"main": "src/index.ts",
 	"scripts": {
 		"start": "npm run build && node dist/index.js",
