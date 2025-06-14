@@ -10,7 +10,7 @@
 		"prepare": "husky"
 	},
 	"author": "Wei Cong",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"puppeteer": "^24.10.1"
 	},
