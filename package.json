@@ -11,6 +11,7 @@
 	"author": "Wei Cong",
 	"license": "MIT",
 	"dependencies": {
+		"pino": "^9.7.0",
 		"puppeteer": "^24.10.1"
 	},
 	"devDependencies": {
