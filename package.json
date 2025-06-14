@@ -27,11 +27,7 @@
 		"typescript-eslint": "^8.34.0"
 	},
 	"lint-staged": {
-		"*": [
-			"prettier --write"
-		],
-		"src/**/*.{ts,tsx}": [
-			"eslint --fix"
-		]
+		"*": "prettier --write",
+		"src/**/*.{ts,tsx}": "eslint --fix"
 	}
 }
