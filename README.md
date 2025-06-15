@@ -62,7 +62,7 @@ Inside this folder, three files will be generated:
 
 > Both the `results/` folder and the timestamped subfolder will be automatically created if they don’t already exist.
 
-###Example JSON:
+### Example JSON:
 
 ```json
 [
