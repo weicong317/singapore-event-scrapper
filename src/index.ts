@@ -3,7 +3,7 @@ import { Period } from "./entities";
 
 const main = async () => {
 	try {
-		const folder = await scrapeUpcomingEvents(Period.TOMORROW);
+		const folder = await scrapeUpcomingEvents(Period.NEXT_MONTH);
 		new Statistic(folder).analyseResult();
 	} catch (error) {
 		logger.error({ error }, "Failed to scrape");
