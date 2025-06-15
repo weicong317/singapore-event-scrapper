@@ -96,8 +96,8 @@ const scrapeSearchResults = async (
 			// Navigate to the page
 			logger.info(`Scraping ${url}`);
 			await page.goto(url, {
-				waitUntil: "networkidle2",
-				timeout: 15000,
+				waitUntil: "networkidle0",
+				timeout: 60000,
 			});
 
 			// Scrape the search results
@@ -156,7 +156,7 @@ const scrapeEventDetails = async (
 
 	try {
 		logger.info(`Scraping ${url}`);
-		const response = await page.goto(url, { waitUntil: "networkidle2", timeout: 15000 });
+		const response = await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
 		if (response && response.status() === 404) {
 			logger.info(`${url} not found`);
 			return null;
