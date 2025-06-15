@@ -1,17 +1,13 @@
-import puppeteer from "puppeteer";
+import { logger, scrapeUpcomingEvents, Statistic } from "./helpers";
+import { Period } from "./entities";
 
-async function main() {
-	const browser = await puppeteer.launch();
-	const page = await browser.newPage();
+const main = async () => {
+	try {
+		const folder = await scrapeUpcomingEvents(Period.TOMORROW);
+		new Statistic(folder).analyseResult();
+	} catch (error) {
+		logger.error({ error }, "Failed to scrape");
+	}
+};
 
-	await page.goto("https://books.toscrape.com");
-
-	const titles = await page.$$eval(".product_pod h3 a", (elements) =>
-		elements.map((el) => el.getAttribute("title")),
-	);
-
-	console.log("Book titles:", titles);
-	await browser.close();
-}
-
-main().catch(console.error);
+main();

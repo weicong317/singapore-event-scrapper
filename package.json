@@ -4,30 +4,36 @@
 	"description": "Scrapes upcoming physical and online events happening in Singapore within the next month from Eventbrite Singapore, and outputs structured event data for further use or analysis.",
 	"main": "src/index.ts",
 	"scripts": {
-		"start": "npm run build && node dist/index.js",
 		"build": "tsc",
+		"start": "node dist/index.js",
+		"dev": "NODE_ENV=development ts-node src/index.ts",
 		"prepare": "husky"
 	},
 	"author": "Wei Cong",
 	"license": "MIT",
 	"dependencies": {
+		"date-fns": "^4.1.0",
+		"p-limit": "^6.2.0",
+		"papaparse": "^5.5.3",
 		"pino": "^9.7.0",
 		"puppeteer": "^24.10.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.29.0",
 		"@types/node": "^24.0.1",
+		"@types/papaparse": "^5.3.16",
 		"eslint": "^9.29.0",
 		"eslint-config-prettier": "^10.1.5",
 		"globals": "^16.2.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.0",
 		"prettier": "^3.5.3",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.34.0"
 	},
 	"lint-staged": {
-		"*": "prettier --write",
+		"**/*.*": "prettier --write",
 		"src/**/*.{ts,tsx}": "eslint --fix"
 	}
 }
